@@ -3,9 +3,76 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
  }}
 
-<div >
-  Hello world!
-</div>
+<main>
+  <section>
+    <div class='form'>
+      <h1 class='form__title'>Make user</h1>
+      <form method='POST' action='/user-create'>
+        <div class='form__content'>
+          <div class='form__field'>
+            <label for='email' class='form__label'>Email
+              adress:</label>
+            <input
+              type='email'
+              name='email'
+              class='form__input'
+            />
+          </div>
+          <div class='form__field'>
+            <label
+              for='login'
+              class='form__label'
+            >Nickname:</label>
+            <input
+              type='login'
+              name='login'
+              class='form__input'
+            />
+          </div>
+          <div class='form__field'>
+            <label
+              for='password'
+              class='form__label'
+            >Password:</label>
+            <input
+              type='password'
+              name='password'
+              class='form__input'
+            />
+          </div>
+          <button class='form__button'>Make</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section>
+    <div class='form'>
+      <h1 class='form__title'>List users</h1>
+      <div class='user-list'>
+        {{#with data.users}}
+
+          {{#if isEmpty}}
+            <mark>List users is empty</mark>
+          {{else}}
+            <ul>
+              {{#each list}}
+                <li>
+                  {{email}}
+                  |
+                  {{login}}
+                  <a
+                    href='/user-delete?id={{id}}'
+                  >(Delete)</a>
+                </li>
+              {{/each}}
+            </ul>
+          {{/if}}
+        {{/with}}
+      </div>
+    </div>
+  </section>
+</main>
 
 {{! 
     Цей код містить лише те, що буде виводитись в <body>
