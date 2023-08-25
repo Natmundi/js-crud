@@ -61,6 +61,8 @@
                   {{email}}
                   |
                   {{login}}
+                  |
+                  {{id}}
                   <a
                     href='/user-delete?id={{id}}'
                   >(Delete)</a>
@@ -70,6 +72,46 @@
           {{/if}}
         {{/with}}
       </div>
+    </div>
+  </section>
+
+  <section>
+    <div class='form'>
+      <h1 class='form__title'>Update users email </h1>
+      <form method='POST' action='/user-update'>
+        <div class='form__content'>
+          <div class='form__field'>
+            <label for='id' class='form__label'>ID:</label>
+            <input
+              type='id'
+              name='id'
+              class='form__input'
+            />
+          </div>
+          <div class='form__field'>
+            <label for='email' class='form__label'>New email
+              adress:</label>
+            <input
+              type='email'
+              name='email'
+              class='form__input'
+            />
+          </div>
+
+          <div class='form__field'>
+            <label
+              for='password'
+              class='form__label'
+            >Password:</label>
+            <input
+              type='password'
+              name='password'
+              class='form__input'
+            />
+          </div>
+          <button class='form__button'>Send</button>
+        </div>
+      </form>
     </div>
   </section>
 </main>
