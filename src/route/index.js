@@ -56,6 +56,58 @@ class User {
   }
 }
 
+class Product {
+  static #list = []
+  constructor(name, price, description) {
+    this.name = name
+    this.price = price
+    this.description = description
+    this.id = Math.floor(Math.random() * 100000)
+    this.createDate = new Date().toISOString()
+  }
+  static add = (product) => {
+    this.#list.push(product)
+  }
+  static getList = () => this.#list
+
+  static getById = (id) =>
+    this.#list.find((product) => product.id === id)
+
+  static updateById = (id, data) => {
+    const product = this.getById(id)
+
+    if (product) {
+      this.update(product, data)
+      return true
+    } else {
+      return false
+    }
+  }
+
+  static update = (
+    product,
+    { name, price, description },
+  ) => {
+    if ((name, price, description)) {
+      product.name = name
+      product.price = price
+      product.description = description
+    }
+  }
+
+  static deleteById = (id) => {
+    const index = this.#list.findIndex(
+      (product) => product.id === id,
+    )
+
+    if (index !== -1) {
+      this.#list.splice(index, 1)
+      return true
+    } else {
+      return false
+    }
+  }
+}
 // ================================================================
 
 // router.get Створює нам один ентпоїнт
@@ -129,6 +181,49 @@ router.post('/user-update', function (req, res) {
   res.render('success-info', {
     style: 'success-info',
     info: result ? 'Users email updated' : 'Error',
+  })
+})
+
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+// ↙️ тут вводимо шлях (PATH) до сторінки
+router.get('/product-create', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  const list = User.getList()
+
+  // ↙️ cюди вводимо назву файлу з сontainer
+  res.render('product-create', {
+    // вказуємо назву папки контейнера, в якій знаходяться наші стилі
+    style: 'product-create',
+
+    data: {
+      users: {
+        list,
+        isEmpty: list.length === 0,
+      },
+    },
+  })
+  // ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+
+// ↙️ тут вводимо шлях (PATH) до сторінки
+router.post('/product-create', function (req, res) {
+  const { name, price, description } = req.body
+
+  const product = new Product(name, price, description)
+
+  Product.add(product)
+
+  console.log(Product.getList())
+
+  res.render('alert', {
+    style: 'alert',
+    info: 'Товар успішно створений',
   })
 })
 
