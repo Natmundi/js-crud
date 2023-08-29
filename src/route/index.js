@@ -76,8 +76,16 @@ class Product {
   static updateById = (id, data) => {
     const product = this.getById(id)
 
+    const { name, price, description } = data
+
     if (product) {
-      this.update(product, data)
+      if (name) {
+        product.name = name
+      } else if (price) {
+        product.price = price
+      } else if (description) {
+        product.description = description
+      }
       return true
     } else {
       return false
@@ -86,12 +94,13 @@ class Product {
 
   static update = (
     product,
-    { id, name, price, description },
+    { name, price, description },
   ) => {
-    if ((id, name, price, description)) {
-      product.id = id
+    if (name) {
       product.name = name
+    } else if (price) {
       product.price = price
+    } else if (description) {
       product.description = description
     }
   }
@@ -380,6 +389,22 @@ router.post('/product-edit', function (req, res) {
       },
     })
   }
+})
+
+// ================================================================
+
+// ↙️ тут вводимо шлях (PATH) до сторінки
+router.get('/product-delete', function (req, res) {
+  const { id } = req.query
+
+  const product = Product.deleteById(Number(id))
+
+  res.render('alert', {
+    style: 'alert',
+    data: {
+      info: 'Товар видалений',
+    },
+  })
 })
 
 // Підключаємо роутер до бек-енду
