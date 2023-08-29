@@ -86,9 +86,10 @@ class Product {
 
   static update = (
     product,
-    { name, price, description },
+    { id, name, price, description },
   ) => {
-    if ((name, price, description)) {
+    if ((id, name, price, description)) {
+      product.id = id
       product.name = name
       product.price = price
       product.description = description
