@@ -30,7 +30,7 @@ main {
 }
 .form__row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 .form__field {
@@ -41,6 +41,11 @@ main {
 .form__fieldfull {
   display: flex;
   flex-direction: column;
+}
+.form__column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
 .form__label {
   font-size: 14px;
@@ -60,6 +65,16 @@ main {
   border: 1px solid #ddd;
   padding: 8px;
   border-radius: 5px;
+}
+.form__edit {
+  background-color: red;
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 5px;
+}
+.form__link {
+  color: #fff;
+  text-decoration: none;
 }
 
 .card__title {

@@ -36,7 +36,7 @@ main {
 
     &__row {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: repeat(3, 1fr);
 		gap: s.space(4);
 	}
 
@@ -50,6 +50,12 @@ main {
         display: flex;
         flex-direction: column;
 
+    }
+
+    &__column{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: s.space(4);
     }
 
     &__label {
@@ -73,6 +79,17 @@ main {
         border: 1px solid s.color("light");
         padding: s.space(2);
         border-radius: 5px;
+    }
+    &__edit{
+        background-color:red;
+        border: 1px solid s.color("light");
+        padding: s.space(2);
+        border-radius: 5px;
+        
+    }
+    &__link{
+        color:#fff;
+        text-decoration: none;
     }
    
 }

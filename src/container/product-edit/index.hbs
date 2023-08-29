@@ -10,66 +10,67 @@
         <form method='POST' action='/product-edit'>
           <h2 class='card__title'>Інформація про товар</h2>
           <div class='form__content'>
+            <div class='form__row'>
+              <div class='form__field'>
+                <label for='name' class='form__label'>Назва
+                  товару</label>
+                <input
+                  type='text'
+                  name='name'
+                  class='form__input'
+                />
+              </div>
 
-            <div class='form__field'>
-              <label for='name' class='form__label'>Назва
-                товару</label>
-              <input
-                type='text'
-                name='name'
-                class='form__input'
-              />
+              <div class='form__field'>
+                <label
+                  for='price'
+                  class='form__label'
+                >Ціна</label>
+                <input
+                  type='number'
+                  name='price'
+                  class='form__input'
+                />
+              </div>
+
+              <div class='form__field'>
+                <label
+                  for='price'
+                  class='form__label'
+                >ID</label>
+                <input
+                  type='number'
+                  name='id'
+                  class='form__input'
+                />
+              </div>
             </div>
 
             <div class='form__field'>
               <label
-                for='price'
+                for='description'
                 class='form__label'
-              >Ціна</label>
-              <input
-                type='number'
-                name='price'
+              >Короткий опис товару</label>
+              <textarea
+                name='description'
                 class='form__input'
-              />
+              ></textarea>
+              <span class='form__description'>Відображується
+                у картці товару</span>
+
             </div>
 
-            <div class='form__field'>
-              <label
-                for='price'
-                class='form__label'
-              >ID</label>
-              <input
-                type='number'
-                name='id'
-                class='form__input'
-              />
+            <div class='form__column'>
+              <button
+                type='submit'
+                class='form__button'
+              >Зберегти оновлення</button>
+              <button class='form__edit'><a
+                  class='form__link'
+                  href='/product-edit?id={{id}}'
+                >Видалити товар</a></button>
+
             </div>
-          </div>
-
-          <div class='form__field'>
-            <label
-              for='description'
-              class='form__label'
-            >Короткий опис товару</label>
-            <textarea
-              name='description'
-              class='form__input'
-            ></textarea>
-            <span class='form__description'>Відображується у
-              картці товару</span>
-
-          </div>
-
-          <div class='form__column'>
-            <button
-              type='submit'
-              class='form__button'
-            >Зберегти оновлення</button>
-            <button class='form__edit'><a
-                class='form__link'
-                href='/product-edit?id={id}}'
-              >Видалити товар</a></button>
-
           </div>
         </form>
       </div>

@@ -75,7 +75,6 @@ class Product {
 
   static updateById = (id, data) => {
     const product = this.getById(id)
-
     const { name, price, description } = data
 
     if (product) {
@@ -86,6 +85,7 @@ class Product {
       } else if (description) {
         product.description = description
       }
+
       return true
     } else {
       return false
@@ -93,8 +93,10 @@ class Product {
   }
 
   static update = (
-    product,
-    { name, price, description },
+    name,
+    price,
+    description,
+    { product },
   ) => {
     if (name) {
       product.name = name
@@ -208,13 +210,6 @@ router.get('/product-create', function (req, res) {
   res.render('product-create', {
     // вказуємо назву папки контейнера, в якій знаходяться наші стилі
     style: 'product-create',
-
-    data: {
-      products: {
-        list,
-        isEmpty: list.length === 0,
-      },
-    },
   })
   // ↑↑ сюди вводимо JSON дані
 })
@@ -260,74 +255,6 @@ router.get('/product-list', function (req, res) {
         isEmpty: list.length === 0,
       },
     },
-
-    productList: {
-      cards: [
-        {
-          title: 'Стильна сукня',
-          description:
-            'Елегантна сукня з натуральної тканини для особливиї випадків',
-          id: 'ID 1357924680',
-          price: '1500$',
-        },
-        {
-          title: 'Спортивні кросівки',
-          description:
-            'Зручні та стильні кросівки для активного способу життя',
-          id: 'ID 9876543210',
-          price: '1200$',
-        },
-        {
-          title: 'Сонячні окуляри',
-          description:
-            'Модні окуляри з високоякусними лінзами для захисту очей від сонця',
-          id: 'ID 2468135790',
-          price: '800$',
-        },
-        {
-          title: 'Чоловічий годинник',
-          description:
-            'Елегантний годинник з механічним механізмом і сталевим браслетом',
-          id: 'ID 8024679135',
-          price: '2500$',
-        },
-        {
-          title: 'Жіночий рюкзак',
-          description:
-            'Стильний рюкзак з великми відділенням та кишенями',
-          id: 'ID 3192850467',
-          price: '900$',
-        },
-        {
-          title: 'Парасолька',
-          description:
-            'Компактна парасолька з автомитичним механізмом',
-          id: 'ID 6749258130',
-          price: '350$',
-        },
-        {
-          title: 'Столові прибори',
-          description:
-            'Набір столових приборів зі сталі виготовлені в класичному стилі',
-          id: 'ID 5036214789',
-          price: '600$',
-        },
-        {
-          title: 'Шкіряний гаманець',
-          description:
-            'Елегантний гаманець з натуральної шкіри з банатьма відділеннями',
-          id: 'ID 7261943580',
-          price: '400$',
-        },
-        {
-          title: 'Фітнес-браслет',
-          description:
-            'Браслет для відстеження активності та здоров`я',
-          id: 'ID 1584079263',
-          price: '700$',
-        },
-      ],
-    },
   })
   // ↑↑ сюди вводимо JSON дані
 })
@@ -336,7 +263,7 @@ router.get('/product-list', function (req, res) {
 
 // ↙️ тут вводимо шлях (PATH) до сторінки
 router.get('/product-edit', function (req, res) {
-  const { id } = req.body
+  const { id } = req.query
 
   const product = Product.getById(Number(id))
   console.log(product)
@@ -367,7 +294,7 @@ router.get('/product-edit', function (req, res) {
 router.post('/product-edit', function (req, res) {
   const { id, name, price, description } = req.body
 
-  const product = Product.updatedById(Number(id), {
+  const product = Product.updateById(Number(id), {
     name,
     price,
     description,
@@ -391,13 +318,10 @@ router.post('/product-edit', function (req, res) {
   }
 })
 
-// ================================================================
-
-// ↙️ тут вводимо шлях (PATH) до сторінки
 router.get('/product-delete', function (req, res) {
   const { id } = req.query
 
-  const product = Product.deleteById(Number(id))
+  Product.deleteById(Number(id))
 
   res.render('alert', {
     style: 'alert',
