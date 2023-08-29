@@ -7,16 +7,11 @@
   <section>
     <div class='form'>
       <h1 class='form__title'>Список товарів</h1>
-      <form method='POST' action='/product-list'>
         <div class="form__content">
-          {{#with data.products}}
-            {{#each list}}
-              {{> cardProduct}}
-            {{/each}}
-          {{/with}}
+         
+              {{> cardProduct.hbs}}
+            
         </div>
-      </form>
-
     </div>
   </section>
 </main>
