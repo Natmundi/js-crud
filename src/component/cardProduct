@@ -1,0 +1,15 @@
+<div class='form__card'>
+    <div class='card__content'>
+        <h2 class='card__title'>{{title}}</h2>
+        <p class='card__description'>{{description}}</p>
+        <span class='card__id'>{{id}}</span>
+
+        <div>
+        <strong class='card__price'>{{price}}</strong>
+        <a
+            class='card__link'
+            href='/product-edit?id={{id}}'
+        >Редагувати</a>
+        </div>
+    </div>
+</div>  

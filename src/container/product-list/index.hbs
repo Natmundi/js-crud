@@ -4,24 +4,23 @@
  }}
 
 <main>
-  <div class='form'>
-
-    <div class='form-card'>
-      <div class='form-content'>
-        <div>
-          <h1 class='card-title'>Успішне виконання дії</h1>
-          <p class='card-description'>{{data.info}}</p>
+  <section>
+    <div class='form'>
+      <h1 class='form__title'>Список товарів</h1>
+      <form method='POST' action='/product-list'>
+        <div class="form__content">
+          {{#with data.products}}
+            {{#each list}}
+              {{> cardProduct}}
+            {{/each}}
+          {{/with}}
         </div>
-        <a
-          class='form-button'
-          href='/product-list'
-        >Повернутись назад</a>
-      </div>
+      </form>
+
     </div>
-
-  </div>
-
+  </section>
 </main>
+
 {{! 
     Цей код містить лише те, що буде виводитись в <body>
     Адже наш layout/default.hbs має вже структуру HTML
