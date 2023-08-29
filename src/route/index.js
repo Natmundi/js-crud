@@ -322,5 +322,64 @@ router.get('/product-list', function (req, res) {
   // ↑↑ сюди вводимо JSON дані
 })
 
+// ================================================================
+
+// ↙️ тут вводимо шлях (PATH) до сторінки
+router.get('/product-edit', function (req, res) {
+  const { id } = req.body
+
+  const product = Product.getById(Number(id))
+  console.log(product)
+
+  if (product) {
+    return res.render('product-edit', {
+      style: 'product-edit',
+      data: {
+        name: product.name,
+        price: product.price,
+        id: product.id,
+        description: product.description,
+      },
+    })
+  } else {
+    return res.render('alert', {
+      style: 'alert',
+      data: {
+        info: 'Товар з таким ID не знайдено',
+      },
+    })
+  }
+})
+
+// ================================================================
+
+// ↙️ тут вводимо шлях (PATH) до сторінки
+router.post('/product-edit', function (req, res) {
+  const { id, name, price, description } = req.body
+
+  const product = Product.updatedById(Number(id), {
+    name,
+    price,
+    description,
+  })
+  console.log(id)
+  console.log(product)
+  if (product) {
+    res.render('alert', {
+      style: 'alert',
+      data: {
+        info: 'Цей товар успішно оновлено',
+      },
+    })
+  } else {
+    res.render('alert', {
+      style: 'alert',
+      data: {
+        info: 'Товар з таким ID не знайдено',
+      },
+    })
+  }
+})
+
 // Підключаємо роутер до бек-енду
 module.exports = router

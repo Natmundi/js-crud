@@ -3,7 +3,7 @@
 @use "../../lib/service.scss" as s;
 
 main {
-    display: flex;
+    display: grid;
     flex-direction: column;
     gap: s.space(10);
     padding: s.space(10);
@@ -25,63 +25,49 @@ main {
         padding: 20px;
         border-radius: 10px;
         box-shadow: 5px 5px 10px #efe5e5;
+        padding-bottom: s.space(10);
     }
 
     &__content {
 		display: grid;
-		gap: s.space(6);
-		justify-items: stretch;
-    	align-items: center;
+		grid-template-columns: repeat(3,1fr);
+        gap: s.space(6)
 	}
 
-    &__row {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: s.space(4);
-	}
-
-    &__field {
-        display:flex;
-        flex-direction: column;
-        gap: s.space(2);
-    }
-
-    &__fieldfull{
-        display: flex;
-        flex-direction: column;
-
-    }
-
-    &__label {
-        font-size: 14px;
-    }
-
-    &__input {
-        border: 1px solid s.color("light");
-        padding: s.space(2);
-        border-radius: 5px;
-    }
-
-    &__description{
-        font-size: small;
-        color: #908989;
-    }
-
-    &__button {
-        background-color: s.color("primary");
-        color: #fff;
-        border: 1px solid s.color("light");
-        padding: s.space(2);
-        border-radius: 5px;
-    }
-   
 }
 .card {
+
+    &__content{
+        display: flex;
+        flex-direction: column;
+        gap: s.space(4)
+    }
 	&__title {
 		font-size: 18px;
-		font-weight: 500;
+		font-weight: 700;
 		padding-bottom: s.space(4);
 	}
+
+    &__description{
+       font-size: 16px;
+    }
+    &__id{
+        color: s.color("description");
+    }
+
+    &__row{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    &__price{
+        font-weight: 600;
+    }
+    &__link{
+        color: s.color("primary");
+        font-weight: 600;
+        text-decoration: none;
+    }
 }
 
 

@@ -1,5 +1,5 @@
-{{#with data.products}}
-  {{#each list}}
+{{#with productList}}
+  {{#each cards}}
 
     <div class='form__card'>
       <div class='card__content'>
@@ -7,7 +7,7 @@
         <p class='card__description'>{{description}}</p>
         <span class='card__id'>{{id}}</span>
 
-        <div>
+        <div class='card__row'>
           <strong class='card__price'>{{price}}</strong>
           <a
             class='card__link'
