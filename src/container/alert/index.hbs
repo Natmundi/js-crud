@@ -5,22 +5,19 @@
 
 <main>
   <div class='form'>
-
     <div class='form-card'>
       <div class='form-content'>
         <div>
-          {{! <h1 class='card-title'>Успішне виконання дії</h1> }}
-          <p class='card-description'>{{data.info}}</p>
+          <h1 class='card-title'>{{data.message}}</h1>
+          <p class='form__label'>{{data.info}}</p>
         </div>
         <a
           class='form-button'
-          href='/product-list'
-        >Повернутись назад</a>
+          href='{{data.link}}'
+        >Повернутися назад</a>
       </div>
     </div>
-
   </div>
-
 </main>
 {{! 
     Цей код містить лише те, що буде виводитись в <body>

@@ -1,0 +1,13 @@
+{{#with data}}
+<div class="form__card">
+	<div class="card__content">
+		<img src="{{img}}" alt="{{title}}" class="card__image">
+		<h2 class="card__title">{{title}}</h1>
+			<p class="card__description">{{description}}</p>
+			{{#each category}}
+			<span class="card__category card__category--{{id}}">{{text}}</span>
+			{{/each}}
+			<button class="card__button">Купити зараз {{price}} грн</button>
+	</div>
+</div>
+{{/with}}

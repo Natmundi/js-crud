@@ -1,0 +1,28 @@
+@use "../../lib/service.scss" as s;
+
+main {
+	display: grid;
+	gap: s.space(10);
+	padding: s.space(10);
+}
+
+.heading {
+	display: flex;
+	flex-direction: column;
+	gap: s.space(4);
+	color: s.color("black");
+
+	&__title {
+		font-size: 24px;
+		font-weight: 500;
+	}
+	
+	&__info {
+		font-size: 16px;
+		
+	}
+}
+
+
+
+

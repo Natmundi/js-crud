@@ -1,0 +1,110 @@
+@use "../../lib/service.scss" as s;
+@use "../../component/heading/style.scss" as heading;
+
+
+.form {
+	display: flex;
+	flex-direction: column;
+	padding: s.space(4);
+	gap: s.space(8);
+
+	&__title {
+		font-size: 25px;
+		font-weight: 500;
+		padding-bottom: s.space(1);
+	}
+	
+	&__content {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: s.space(3);
+	}
+
+	&__card {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		padding: s.space(4);
+		border-radius: 10px;
+		box-shadow: 5px 5px 10px #ddd;
+		gap: s.space(3);
+		max-width: 300px;
+		width: 100%;
+	}
+
+	&__field {
+		display: flex;
+		flex-direction: column;
+		gap: s.space(2);
+	}
+	
+
+
+}
+.card {
+	&__title {
+		font-size: 18px;
+		font-weight: 500;
+		padding-bottom: s.space(2);
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: s.space(3);
+	}
+
+	&__description {
+		font-size: 14px;
+		
+	}
+
+	&__category {
+		border-radius: 10px;
+		font-size: 12px;
+		padding: s.space(1);
+		text-align: justify;
+		width:fit-content;
+	}
+	&__image {
+		max-height: 300px;
+		width: 100%;
+	}
+
+	&__category--1 {
+		border: 1px solid s.color('primary');
+		color: s.color('primary');
+		
+	}
+
+	&__category--2 {
+		border: 1px solid #008000;
+		color: #008000;
+		
+	}
+	&__button {
+		background-color: s.color('primary');
+		color: #fff;
+		border: none;
+		max-width: 300px;
+		width: 100%;
+		text-align: center;
+		padding: 10px 20px;
+		border-radius: 5px;
+		text-decoration: none;
+		font-size: 16px;
+		cursor: pointer;
+		transition: opacity 0.3s ease;
+
+			&:hover {
+				opacity: 0.7;
+			}
+	}
+	
+	
+}
+
+
+
+
+

@@ -1,0 +1,20 @@
+main {
+  display: grid;
+  gap: 40px;
+  padding: 40px;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.heading__title {
+  font-size: 24px;
+  font-weight: 500;
+}
+.heading__info {
+  font-size: 16px;
+}
+
+/*# sourceMappingURL=style.css.map */
