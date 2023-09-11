@@ -1,0 +1,61 @@
+main {
+  display: grid;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 32px;
+}
+.form__title {
+  font-size: 30px;
+  font-weight: bold;
+  padding-bottom: 4px;
+  color: #23629d;
+}
+.form__card {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #efe5e5;
+  padding-bottom: 40px;
+}
+.form__content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.card__title {
+  font-size: 18px;
+  font-weight: 700;
+  padding-bottom: 16px;
+}
+.card__description {
+  font-size: 16px;
+}
+.card__id {
+  color: #908989;
+}
+.card__row {
+  display: flex;
+  justify-content: space-between;
+}
+.card__price {
+  font-weight: 600;
+}
+.card__link {
+  color: #23629d;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=style.css.map */
