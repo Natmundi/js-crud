@@ -1,0 +1,19 @@
+@use "../../lib/service.scss" as s;
+
+
+.form__button {
+	background-color: s.color('primary');
+	color: #fff;
+	border: none;
+	width: 100%;
+	padding: 10px 20px;
+	border-radius: 10px;
+	text-decoration: none;
+	font-size: 16px;
+	cursor: pointer;
+	transition: opacity 0.3s ease;
+
+		&:hover {
+			opacity: 0.7;
+		}
+}

@@ -1,6 +1,12 @@
 
 
 @use "../../lib/service.scss" as s;
+@use "../../component/heading/style.scss" as heading;
+@use "../../component/purchase-product/style.scss" as purchaseProduct;
+@use "../../component/divider/style.scss" as divider;
+@use "../../component/field/style.scss" as field;
+
+@use "../../component/button/style.scss" as button;
 
 main {
     display: flex;
@@ -9,79 +15,32 @@ main {
     padding: s.space(10);
 }
 
-.form {
+.form-card {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    padding: s.space(4);
-    gap: s.space(8);
-
-    &__title{
-        font-size: 30px;
-        font-weight: bold;
-        padding-bottom: s.space(1);
-        color: s.color("primary");
-    }
-    &__card{
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 5px 5px 10px #efe5e5;
-    }
-
-    &__content {
-		display: grid;
-		gap: s.space(6);
-		justify-items: stretch;
-    	align-items: center;
-	}
-
-    &__row {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: s.space(4);
-	}
-
-    &__field {
-        display:flex;
-        flex-direction: column;
-        gap: s.space(2);
-    }
-
-    &__fieldfull{
-        display: flex;
-        flex-direction: column;
-
-    }
-
-    &__label {
-        font-size: 14px;
-    }
-
-    &__input {
-        border: 1px solid s.color("light");
-        padding: s.space(2);
-        border-radius: 5px;
-    }
-
-    &__description{
-        font-size: small;
-        color: s.color("description");
-    }
-
-    &__button {
-        background-color: s.color("primary");
-        color: #fff;
-        border: 1px solid s.color("light");
-        padding: s.space(2);
-        border-radius: 5px;
-    }
-   
+    gap: s.space(5);
+    padding: s.space(5);
+    border: 1px solid #ddd;
+    border-radius: 10px;
 }
-.card {
-	&__title {
-		font-size: 18px;
-		font-weight: 500;
-		padding-bottom: s.space(4);
+
+.cart {
+	display: grid;
+    
+	gap: s.space(4);
+
+	&__item {
+		display: flex;
+		justify-content: space-between;
+        gap: s.space(170);
+        width: 100%;
 	}
+}
+.product-list {
+	display: flex;
+    flex-direction: row;
+    gap: s.space(5);
 }
 
 

@@ -41,7 +41,6 @@ main {
   border-radius: 10px;
   box-shadow: 5px 5px 10px #ddd;
   gap: 12px;
-  max-width: 300px;
   width: 100%;
 }
 .form__field {
@@ -51,8 +50,8 @@ main {
 }
 
 .card__title {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: 700;
   padding-bottom: 8px;
 }
 .card__content {
@@ -62,6 +61,7 @@ main {
 }
 .card__description {
   font-size: 14px;
+  font-weight: 600;
 }
 .card__category {
   border-radius: 10px;
@@ -82,21 +82,20 @@ main {
   border: 1px solid #008000;
   color: #008000;
 }
-.card__button {
+
+.form__button {
   background-color: #23629d;
   color: #fff;
   border: none;
-  max-width: 300px;
   width: 100%;
-  text-align: center;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 10px;
   text-decoration: none;
   font-size: 16px;
   cursor: pointer;
   transition: opacity 0.3s ease;
 }
-.card__button:hover {
+.form__button:hover {
   opacity: 0.7;
 }
 

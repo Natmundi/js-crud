@@ -2,10 +2,10 @@
 Це код container файлу для index сторінки, 
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
  }}
-<main class="main">
+<main>
   <div class="form">
     {{#with data}}
-      <form method="POST" action="/purchase-submit" class="form__card">
+      <form method="POST" action="/purchase-submit?id={{id}}" class="form__card">
         {{>heading title="Ваше замовлення"}}
 
         <ul class="cart">
@@ -37,7 +37,8 @@
 				{{> field value=amount name="amount" disabled=true}}
 
 
-        <strong class="form-cart__total">Всього: {{totalPrice}} грн ({{bonus}} грв бонусів)</strong>
+        <strong class="form-cart__total">Всього: {{totalPrice}} грн({{bonus}} грн бонусів)</strong>
+
 
 				{{>button text="Оформити замовлення"}}
         

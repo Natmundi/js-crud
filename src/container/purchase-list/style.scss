@@ -1,0 +1,32 @@
+
+
+@use "../../lib/service.scss" as s;
+@use "../../component/heading/style.scss" as heading;
+@use "../../component/divider/style.scss" as divider;
+@use "../../component/field/style.scss" as field;
+
+
+.form {
+    display: grid;
+    padding: s.space(10);
+    gap: s.space(8);
+
+   
+    &__title{
+        font-size: 30px;
+        font-weight: bold;
+        padding-bottom: s.space(1);
+        color: s.color("primary");
+    }
+
+    &__card {
+		display: flex;
+		justify-content: space-between;
+		gap: s.space(3);
+		align-items: center;
+        color: s.color("description");
+        font-size: 14px;
+        margin-bottom: s.space(16);
+	}
+}
+
