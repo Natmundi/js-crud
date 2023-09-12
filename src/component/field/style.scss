@@ -10,7 +10,7 @@
 	}
 
 	&__input {
-		border: 1px solid #ddd;
+		border: 1px solid s.color("description");
 		border-radius: 5px;
 		padding: s.space(2);
 		margin-bottom: s.space(3);

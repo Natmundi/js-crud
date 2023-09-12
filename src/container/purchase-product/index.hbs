@@ -14,17 +14,17 @@
 					<h2 class="product-info__title">{{title}}</h2>
 					<p class="product-info__subtitle">{{description}}</p>
 
-					<div class="product-info__divider"></div>
+					{{>divider}}
 
 					{{#each category}}
 					<span class="card__category card__category--{{id}}">{{text}}</span>
 					{{/each}}
 
-					<div class="product-info__divider"></div>
+					{{>divider}}
 
 					{{> field label="Кількість" type="number" name="amount" value="1"}}
 
-					<a href="/purchase-product?id={{id}}" class="card__button">Купити зараз: {{price}}грв</a>
+					<button class="card__button">Купити зараз: {{price}}грв</button>
 				</div>
 			</form>
 			{{/with}}

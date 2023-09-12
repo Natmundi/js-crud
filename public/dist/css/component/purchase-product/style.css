@@ -25,7 +25,7 @@ main {
 }
 .form__title {
   font-size: 25px;
-  font-weight: 500;
+  font-weight: 700;
   padding-bottom: 4px;
 }
 .form__content {
@@ -52,7 +52,7 @@ main {
 
 .card__title {
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
   padding-bottom: 8px;
 }
 .card__content {
