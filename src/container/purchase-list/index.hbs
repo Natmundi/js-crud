@@ -5,26 +5,37 @@
 <main>
   <section>
     <div class='form'>
-      <h1 class="form__title">{{title}}</h1>
-        <div class="form__content">
-         
-            {{#with data.purchases}}
-              
-                  <div class="form__card">
-                    <small class="card__id">ID: {{id}}</small>
-                    <h3 class="card__title">Товари {{product}}</h3>
-                    <h4 class="card__title">
-                      Сума замовлення{{totalPrice}} грн</h4>
-                    <h4 class="card__title">
-                    Нараховані бонуси {{bonus}}</h4>
-                  </div>
-                
-              {{> divider}}
+      <h1 class='form__title'>{{title}}</h1>
+        <section class='purchase-list'>
+          {{#with data.purchases}}
+            {{!-- {{#each list}} --}}
            
-            {{/with}} 
+              <a class="purchase-content" href='/purchase-info?id={{id}}'>
+                <div class='purchase-item'>
+                    <div class='purchase-item__block'>
+                      <span class='title'>ID: ´{{id}}</span>
+                    </div>
+                    <div class='purchase-item__block'>
+                      <span class='title'>Товари</span>
+                      <span class='text'>{{product}}</span>
+                    </div>
+                    <div class='purchase-item__block'>
+                      <span class='title'>Сума замовлення</span>
+                      <span class='text'>{{totalPrice}} грн</span>
+                    </div>
+                    <div class='purchase-item__block'>
+                      <span class='title'>Нараховані бонуси</span>
+                      <span class='text'>{{bonus}} грн</span>
+                    </div>
+                </div>
+              </a>
+              
+              {{> divider}}
             
-         
-        </div>
+            {{!-- {{/each}} --}}
+          {{/with}}
+          
+  </section>
     </div>
   </section>
 </main>

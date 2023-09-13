@@ -6,34 +6,43 @@
 @use "../../component/field/style.scss" as field;
 
 
+main {
+    display: flex;
+    flex-direction: column;
+    gap: s.space(10);
+    padding: s.space(10);
+}
 .form {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     padding: s.space(10);
     gap: s.space(8);
+    margin-bottom: s.space(5);
 
    
     &__title{
-        font-size: 40px;
+        font-size: 30px;
         font-weight: bold;
-        padding: s.space(5);
+        padding-bottom: s.space(1);
         color: s.color("primary");
-        margin-bottom: s.space(5);
     }
-    &__content {
-        display: grid;
-        grid-template-rows: repeat(4, 1fr);
-        gap: s.space(3);
-        padding: s.space(10);
-    }
+}
 
-    &__card {
-		display: flex;
-		justify-content: space-between;
-		gap: s.space(3);
-		align-items: center;
+.purchase-content {
+    text-decoration: none;
+}
+.purchase-item {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: s.space(20);
+   
+
+    &__block {
         color: s.color("description");
         font-size: 14px;
-        margin-bottom: s.space(16);
-	}
+       
+    }
+    
 }
+
 
