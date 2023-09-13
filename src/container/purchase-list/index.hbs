@@ -5,10 +5,10 @@
 <main>
   <section>
     <div class='form'>
-      {{> heading title="Мої замовлення"}}
+      <h1 class="form__title">{{title}}</h1>
         <div class="form__content">
-          
-         {{#with data.purchases}}
+         
+            {{#with data.purchases}}
               
                   <div class="form__card">
                     <small class="card__id">ID: {{id}}</small>
@@ -19,9 +19,10 @@
                     Нараховані бонуси {{bonus}}</h4>
                   </div>
                 
-            {{> divider}}
+              {{> divider}}
            
-         {{/with}} 
+            {{/with}} 
+            
          
         </div>
     </div>

@@ -509,6 +509,7 @@ router.get('/purchase-list', function (req, res) {
   res.render('purchase-list', {
     // вказуємо назву папки контейнера, в якій знаходяться наші стилі
     style: 'purchase-list',
+    title: `Мої замовлення`,
 
     data: {
       purchases: {
