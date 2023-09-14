@@ -576,7 +576,7 @@ router.get('/purchase-edit', function (req, res) {
       style: 'alert',
       component: ['button', 'heading'],
       isError: true,
-      title: 'Помилка',
+      message: 'Помилка',
       info: 'Замовлення з таким ID не знайдено',
     })
   } else {
@@ -624,7 +624,7 @@ router.post(`/purchase-edit`, function (req, res) {
         component: ['button', 'heading'],
         data: {
           info: `Товар успішно оновлено`,
-          title: `Успішна дія`,
+          message: `Успішна дія`,
           link: `/purchase-list`,
         },
       })
@@ -636,7 +636,7 @@ router.post(`/purchase-edit`, function (req, res) {
         component: ['button', 'heading'],
         data: {
           info: `Товар не оновлений`,
-          title: `Помилка`,
+          message: `Помилка`,
           link: `/purchase-list`,
         },
       })
@@ -650,7 +650,7 @@ router.post(`/purchase-edit`, function (req, res) {
 
       data: {
         info: `Товар не оновлений`,
-        title: `Помилка`,
+        message: `Помилка`,
         link: `/purchase-list`,
       },
     })
