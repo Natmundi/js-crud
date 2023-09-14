@@ -5,7 +5,7 @@
 <main>
   <div class='form'>
     {{#with data}}
-    <form method='POST' action='/product-edit'>
+    <form method='POST' action=`/purchase-edit?id={{data.id}}` >
     <div class='form__card'>
         
           {{>heading title="Зміна данних"}}
