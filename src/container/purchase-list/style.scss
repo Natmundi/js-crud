@@ -3,7 +3,7 @@
 @use "../../lib/service.scss" as s;
 
 @use "../../component/divider/style.scss" as divider;
-@use "../../component/field/style.scss" as field;
+@use "../../component/field/style.scss" as field-form;
 
 
 main {
@@ -34,15 +34,21 @@ main {
 .purchase-item {
     display: flex;
     justify-content: space-between;
-    padding-bottom: s.space(20);
+    padding-bottom: s.space(10);
    
 
     &__block {
+        display: grid;
         color: s.color("description");
         font-size: 14px;
+        gap: s.space(4);
        
     }
     
+    
 }
 
+.item__text{
+    color:rgb(24, 24, 24);
+}
 

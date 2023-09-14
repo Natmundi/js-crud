@@ -8,7 +8,7 @@
       <h1 class='form__title'>{{title}}</h1>
         <section class='purchase-list'>
           {{#with data.purchases}}
-            {{!-- {{#each list}} --}}
+            {{#each list}}
            
               <a class="purchase-content" href='/purchase-info?id={{id}}'>
                 <div class='purchase-item'>
@@ -17,25 +17,25 @@
                     </div>
                     <div class='purchase-item__block'>
                       <span class='title'>Товари</span>
-                      <span class='text'>{{product}}</span>
+                      <span class='item__text'>{{product}}</span>
                     </div>
                     <div class='purchase-item__block'>
                       <span class='title'>Сума замовлення</span>
-                      <span class='text'>{{totalPrice}} грн</span>
+                      <span class='item__text'>{{totalPrice}} грн</span>
                     </div>
                     <div class='purchase-item__block'>
                       <span class='title'>Нараховані бонуси</span>
-                      <span class='text'>{{bonus}} грн</span>
+                      <span class='item__text'>{{bonus}} грн</span>
                     </div>
                 </div>
               </a>
               
               {{> divider}}
             
-            {{!-- {{/each}} --}}
+            {{/each}}
           {{/with}}
           
-  </section>
+        </section>
     </div>
   </section>
 </main>

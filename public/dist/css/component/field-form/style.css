@@ -1,0 +1,19 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+.field__label {
+  font-size: 14px;
+}
+.field--disabled {
+  position: absolute;
+  display: none;
+}
+.field__value {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/*# sourceMappingURL=style.css.map */

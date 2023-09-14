@@ -52,11 +52,17 @@ main {
 .purchase-item {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
 }
 .purchase-item__block {
+  display: grid;
   color: #908989;
   font-size: 14px;
+  gap: 16px;
+}
+
+.item__text {
+  color: rgb(24, 24, 24);
 }
 
 /*# sourceMappingURL=style.css.map */
