@@ -16,42 +16,54 @@ main {
 
    .form-content {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
         gap: s.space(6);
     }
-    .form-column{
-        flex-direction: column;
-        gap: s.space(10);
-    }
-
+   
     .form-card{
         padding: 20px;
         border-radius: 10px;
         box-shadow: 10px 10px 10px #efe5e5;
         
     }
-    .card-title{
-        font-size: 18px;
-        font-weight: 500;
-        margin-bottom: s.space(4);
-
-    }
     
-    .card-description {
+   .alert {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    
+   }
+   
+
+    .alert__title {
+        font-size: 24px;
+        font-weight: 600;
+        padding-bottom: 10px;
+    }
+
+    .alert__text {
         font-size: 14px;
     }
 
-    .form-button{
+    .alert__button{
+        display: flex;
+        justify-content: center;
         background-color: s.color("primary");
 		color: #fff;
 		border: 1px solid s.color("primary");
 		text-align: center;
-		padding: s.space(2);
-		border-radius: 5px;
+		padding: s.space(4) s.space(6);
+		border-radius: 10px;
 		text-decoration: none;
         width: 280px;
         max-width: 100%;
+       
+
+
+        transition: opacity 0.5s;
+
+        &:hover {
+            opacity: 0.5s;
+        };
     
     }
 

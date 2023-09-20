@@ -14,14 +14,7 @@ main {
 
 .form-content {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   gap: 24px;
-}
-
-.form-column {
-  flex-direction: column;
-  gap: 40px;
 }
 
 .form-card {
@@ -30,26 +23,38 @@ main {
   box-shadow: 10px 10px 10px #efe5e5;
 }
 
-.card-title {
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 16px;
+.alert {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.card-description {
+.alert__title {
+  font-size: 24px;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+
+.alert__text {
   font-size: 14px;
 }
 
-.form-button {
+.alert__button {
+  display: flex;
+  justify-content: center;
   background-color: #23629d;
   color: #fff;
   border: 1px solid #23629d;
   text-align: center;
-  padding: 8px;
-  border-radius: 5px;
+  padding: 16px 24px;
+  border-radius: 10px;
   text-decoration: none;
   width: 280px;
   max-width: 100%;
+  transition: opacity 0.5s;
+}
+.alert__button:hover {
+  opacity: 0.5s;
 }
 
 /*# sourceMappingURL=style.css.map */
