@@ -35,10 +35,13 @@ a {
 
 .title {
     font-size: 24px;
+    font-weight: 600;
 }
 
 .title--center {
     text-align: center;
+    font-size: 24px;
+    
 }
 
 .choose {
@@ -56,4 +59,34 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.track {
+	display: grid;
+	grid-template-columns: 92px 1fr 42px;
+	gap: s.space(7);
+	align-items: center;
+	padding: s.space(4);
+
+	&__list {
+		display: grid;
+		gap: s.space(7);
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: s.space(2);
+	}
+
+	&__name {
+		font-size: 24px;
+		color: s.color(light);
+	}
+
+	&__author {
+		font-size: 16px;
+		color: s.color("description");
+	}
 }

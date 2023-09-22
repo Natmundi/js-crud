@@ -78,21 +78,21 @@ a:hover {
   color: #908989;
 }
 
-.choose {
+.add-button {
   display: grid;
+  grid-template-columns: 92px 1fr;
+  align-items: center;
   gap: 24px;
+  color: #ddd;
+  font-size: 18px;
 }
 
-.choose__item {
-  display: grid;
-  grid-template-columns: 56px 1fr;
-  gap: 24px;
+.text {
+  font-size: 20px;
 }
 
-.choose__content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.card {
+  background-color: rgb(156, 143, 143);
 }
 
 /*# sourceMappingURL=style.css.map */

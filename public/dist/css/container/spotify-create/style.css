@@ -27,10 +27,12 @@ a:hover {
 
 .title {
   font-size: 24px;
+  font-weight: 600;
 }
 
 .title--center {
   text-align: center;
+  font-size: 24px;
 }
 
 .choose {
@@ -50,8 +52,35 @@ a:hover {
   justify-content: space-between;
 }
 
-.title--small {
+.track {
+  display: grid;
+  grid-template-columns: 92px 1fr 42px;
+  gap: 28px;
+  align-items: center;
+  padding: 16px;
+}
+.track__list {
+  display: grid;
+  gap: 28px;
+}
+.track__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+.track__name {
+  font-size: 24px;
+  color: #ddd;
+}
+.track__author {
   font-size: 16px;
+  color: #908989;
+}
+
+.title--small {
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .header {
