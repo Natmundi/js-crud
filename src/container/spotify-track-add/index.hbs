@@ -5,35 +5,41 @@
 
 <main class="main">
   <div class="main__content">
+
     {{#with data}}
+    <h1 class="title title--center">Додати до плейлиста</h1>
 
-    <h1 class="title title--center">{{name}}</h1>
 
-    <ul class="track__list">
-      <a href="/spotify-track-add?playlistId={{playlistId}}" class="add-button">
-        <img width="92px" height="92px" src="/png/add_button.png">
-        <div class="text">Додати до плейліста</div>
-      </a>
-
+    <ul class="track__list card">
 
       {{#each tracks}}
       <li class="track">
-        <img src="{{image}}" alt="{{name}}">
+        <img src="{{image}}" alt="{{name}}" class="track__image">
         <div class="track__content">
           <strong class="track__name">{{name}}</strong>
           <em class="track__author">{{author}}</em>
         </div>
-        <a href="/spotify-track-delete?playlistId={{../playlistId}}&trackId={{id}}">
-          <img src="/png/delete_button.png">
+        <a href="/spotify-track-add?playlistId={{../playlistId}}&trackId={{id}}">
+          <img src="/png/add_track.png">
         </a>
+
+        <form action="/spotify-track-add" method="POST">
+
+          <input type="hidden" name="playlistId" value="{{../playlistId}}">
+          <input type="hidden" name="trackiId" value="{{id}}">
+          <button type="submit">
+            <img srs="/png/add-track.png">
+          </button>
+
+        </form>
       </li>
       {{/each}}
     </ul>
 
-
     {{/with}}
   </div>
 </main>
+
 {{!
 Цей код містить лише те, що буде виводитись в
 
