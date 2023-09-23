@@ -1,5 +1,9 @@
 @use "./service.scss" as s;
 
+body {
+	background-color: s.color("dark");
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -12,10 +16,7 @@ a {
 }
 
 .main {
-    background-color: s.color("dark");
-
-    height: 100%;
-
+    
     color: s.color("light");
 
     display: flex;
@@ -89,4 +90,35 @@ a {
 		font-size: 16px;
 		color: s.color("description");
 	}
+}
+
+.playlist {
+	display: grid;
+	grid-template-columns: 92px 1fr;
+	gap: s.space(7);
+	align-items: center;
+
+	&__list {
+		display: grid;
+		gap: s.space(7);
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: s.space(2);
+	}
+
+	&__name {
+		font-size: 24px;
+		color: s.color("light");
+	}
+
+	&__amount {
+		font-size: 16px;
+		color: s.color("description");
+	}
+
+	
 }
